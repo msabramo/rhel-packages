@@ -257,7 +257,7 @@ Patch101: python-2.3.4-lib64-regex.patch
 # and add the /usr/lib64/pythonMAJOR.MINOR/site-packages to sitedirs, in front of
 # /usr/lib/pythonMAJOR.MINOR/site-packages
 # Not upstream
-Patch102: python-2.6.8-lib64.patch
+Patch102: python-2.7.3-lib64.patch
 
 # rhbz#488396: rework the ctypes module to use ffi_closure_alloc and
 # ffi_closure_free, rather than malloc_closure.c, since the latter tries to
