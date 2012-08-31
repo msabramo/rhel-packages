@@ -206,7 +206,10 @@ Patch7: python-2.5.1-sqlite-encoding.patch
 # SONAME from a library; we avoid this, apparently to minimize space
 # requirements on the live CD:
 # (rhbz:307221)
-Patch10: python-2.6.2-binutils-no-dep.patch
+# 2012-08-31 msabramo: Commenting out python-2.7.3-binutils-no-dep.patch
+# because I prioritize correctness and simplicity over dependencies and space
+# requirements.
+# Patch10: python-2.7.3-binutils-no-dep.patch
 
 # Add various constants to the socketmodule (rhbz#436560):
 # TODO: these patches were added in 2.5.1-22 and 2.5.1-24 but appear not to
@@ -480,7 +483,11 @@ rm -r Modules/zlib || exit 1
 %patch102 -p1 -b .lib64
 %endif
 
-%patch10 -p1 -b .binutils-no-dep
+# 2012-08-31 msabramo: Commenting out python-2.7.3-binutils-no-dep.patch
+# because I prioritize correctness and simplicity over dependencies and space
+# requirements.
+# %patch10 -p1 -b .binutils-no-dep
+
 %patch13 -p1 -b .socketmodule
 %patch14 -p1 -b .socketmodule2
 %patch16 -p1 -b .rpath
