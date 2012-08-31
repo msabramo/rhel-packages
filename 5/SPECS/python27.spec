@@ -1,5 +1,5 @@
 %{!?__python_ver:%global __python_ver EMPTY}
-%global __python_ver 26
+%global __python_ver 27
 %global unicode ucs4
 
 # Note: bcond_without adds the '--without tests' build condition.
@@ -18,7 +18,7 @@
 %global tkinter tkinter
 %endif
 
-%global pybasever 2.6
+%global pybasever 2.7
 %global pylibdir %{_libdir}/python%{pybasever}
 %global tools_dir %{pylibdir}/Tools
 %global demo_dir %{pylibdir}/Demo
@@ -80,7 +80,7 @@
 #
 # brp-python-bytecompile is normally called without a parameter, which
 # effectively hardcodes the use of /usr/bin/python, leaving the .pyc/.pyo files
-# with an ABI version of 2.4, rather than 2.6
+# with an ABI version of 2.4, rather than 2.7
 #
 # This can be checked with "hexdump -C".
 # A python 2.7 .pyo file should begin with:
@@ -106,7 +106,7 @@
 
 Summary: An interpreted, interactive, object-oriented programming language
 Name: %{python}
-Version: 2.6.8
+Version: 2.7.3
 Release: 1%{?dist}
 License: Python
 Group: Development/Languages
@@ -151,10 +151,10 @@ Source4: systemtap-example.stp
 # Similarly to how we needed to redefine __os_install_post (see above), drop
 # a file into /etc/rpm/macros providing an alternative definition of that macro
 #
-# This defines a __python26_os_install_post macro, so that a specfile for a
+# This defines a __python27_os_install_post macro, so that a specfile for a
 # module should merely need to redefine __os_install_post to this in order to
-# be byte-compiled using python2.6
-Source5: macros.python26
+# be byte-compiled using python2.7
+Source5: macros.python27
 
 # An alternative script that allows packages to build against python and python26
 # via the same source.
