@@ -235,7 +235,8 @@ Patch17: python-2.6.4-distutils-rpath.patch
 # From http://bugs.python.org/issue2422
 #   http://bugs.python.org/file9872/disable-pymalloc-on-valgrind-py26.patch
 # with the "configure" part removed; appears to be identical to the version committed to 2.7
-Patch52: disable-pymalloc-on-valgrind-py26.patch
+# 2012-08-31 msabramo: Update from py26 to py27 patch
+Patch52: disable-pymalloc-on-valgrind-py27.patch
 
 # Systemtap support: add statically-defined probe points
 # Patch based on upstream bug: http://bugs.python.org/issue4111
