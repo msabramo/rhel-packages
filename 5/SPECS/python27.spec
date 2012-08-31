@@ -297,7 +297,9 @@ Patch102: python-2.7.3-lib64.patch
 #
 # http://bugs.python.org/issue7564
 # http://svn.python.org/view?view=revision&revision=83839
-Patch120: Python-2.6.5-ioctl_test.patch
+# 2012-08-31 msabramo: Commenting out Python-2.6.5-ioctl_test.patch
+# because it seems to have been fixed upstream
+# Patch120: Python-2.6.5-ioctl_test.patch
 
 # Patch up pyexpat.h so it will build against RHEL-5's pyexpat-devel:
 Patch200: python-2.6.4-expat-version.patch
@@ -519,7 +521,7 @@ rm -r Modules/zlib || exit 1
 # %patch111 -p1 -b .no-static-lib
 
 # %patch119 -p1 -b .parallel_build
-%patch120 -p1 -b .ioctl_test
+# %patch120 -p1 -b .ioctl_test
 
 %if 0%{?with_system_expat}
 %patch200 -p1 -b .expat-version
