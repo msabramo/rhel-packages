@@ -161,6 +161,11 @@ Source5: macros.python27
 Source7: brp-multiple-python-bytecompile
 
 
+# Fix "sqlite3_int64 undeclared" compile error
+# http://bugs.python.org/issue14572
+# (msabramo 2012-08-31)
+Patch0: Python-2.7.3-sqlite3_int64.patch
+
 # Removes the "-g" option from "pydoc", for some reason; I believe
 # (dmalcolm 2010-01-29) that this was introduced in this change:
 # - fix pydoc (#68082)
@@ -486,6 +491,7 @@ rm -r Modules/zlib || exit 1
 #
 # Apply patches:
 #
+%patch0 -p1 -b .sqlite3_int64
 %patch1 -p1 -b .no_gui
 %patch4 -p1 -b .cflags
 %patch6 -p1 -b .plural
