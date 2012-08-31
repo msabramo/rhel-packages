@@ -391,7 +391,6 @@ BuildRequires: libGL-devel tk tix gcc-c++ libX11-devel glibc-devel
 BuildRequires: bzip2 tar findutils pkgconfig tcl-devel tk-devel
 BuildRequires: tix-devel bzip2-devel sqlite-devel
 BuildRequires: db4-devel
-BuildRequires: libffi-devel
 
 
 # Valgrind headers were in core valgrind subpackage on EL5, but were moved to
