@@ -227,7 +227,9 @@ Patch16: python-2.6-rpath.patch
 Patch17: python-2.6.4-distutils-rpath.patch
 
 # Fix distutils to follow the Fedora/RHEL/CentOS policies of having .pyo files
-Patch51: python-2.6-distutils_rpm.patch
+# 2012-08-31 msabramo: Commenting out python-2.6-distutils_rpm.patch
+# because it seems to have been fixed upstream.
+# Patch51: python-2.6-distutils_rpm.patch
 
 # Automatically disable arena allocator when run under valgrind:
 # From http://bugs.python.org/issue2422
@@ -493,7 +495,10 @@ rm -r Modules/zlib || exit 1
 %patch16 -p1 -b .rpath
 %patch17 -p1 -b .distutils-rpath
 
-%patch51 -p1 -b .brprpm
+# 2012-08-31 msabramo: Commenting out python-2.6-distutils_rpm.patch
+# because it seems to have been fixed upstream.
+# %patch51 -p1 -b .brprpm
+
 %if 0%{with_valgrind}
 %patch52 -p1 -b .valgrind
 %endif
