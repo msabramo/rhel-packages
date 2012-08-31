@@ -169,10 +169,6 @@ Source7: brp-multiple-python-bytecompile
 # Not upstream
 Patch1: Python-2.2.1-pydocnogui.patch
 
-# Fixup configure.in and setup.py to build against system expat library.
-# Adapted from http://svn.python.org/view?view=rev&revision=77169
-Patch3: python-2.6.2-with-system-expat.patch
-
 # Add $(CFLAGS) to the linker arguments when linking the "python" binary
 # since some architectures (sparc64) need this (rhbz:199373).
 # Not yet filed upstream
@@ -470,7 +466,6 @@ rm -r Modules/zlib || exit 1
 #
 # Apply patches:
 #
-%patch3 -p1 -b .expat
 %patch1 -p1 -b .no_gui
 %patch4 -p1 -b .cflags
 %patch6 -p1 -b .plural
