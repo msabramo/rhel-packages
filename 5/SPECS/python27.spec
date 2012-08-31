@@ -537,7 +537,7 @@ find -name "*~" |xargs rm -f
 %if ! 0%{regenerate_autotooling_patch}
 # Normally we apply the patch to "configure"
 # We don't apply the patch if we're working towards regenerating it
-%patch300 -p0 -b .autotool-intermediates
+# %patch300 -p0 -b .autotool-intermediates
 %endif
 
 %build
