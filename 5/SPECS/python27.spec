@@ -288,7 +288,10 @@ Patch102: python-2.7.3-lib64.patch
 # Resolves http://bugs.python.org/issue10013
 # Title: fix `./libpython2.6.so: undefined reference to `_PyParser_Grammar` in 
 # parallel builds
-Patch119: Python-2.6.5-parallel_build.patch
+# 2012-08-31 msabramo: Commenting out Python-2.6.5-parallel_build.patch
+# because it seems to have been fixed upstream
+# http://bugs.python.org/issue10013: "This change was backported to 2.7 (r87701)"
+# Patch119: Python-2.6.5-parallel_build.patch
 
 # Resolves Issue 7564: test_ioctl may fail when run in background
 #
@@ -515,7 +518,7 @@ rm -r Modules/zlib || exit 1
 
 # %patch111 -p1 -b .no-static-lib
 
-%patch119 -p1 -b .parallel_build
+# %patch119 -p1 -b .parallel_build
 %patch120 -p1 -b .ioctl_test
 
 %if 0%{?with_system_expat}
