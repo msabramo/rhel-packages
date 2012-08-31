@@ -83,6 +83,10 @@
 # with an ABI version of 2.4, rather than 2.6
 #
 # This can be checked with "hexdump -C".
+# A python 2.7 .pyo file should begin with:
+#     03 f3 0d 0a
+# corresponding to MAGIC=62211 = 0xF303
+#
 # A python 2.6 .pyo file should begin with:
 #     d1 f2 0d 0a
 # corresponding to MAGIC=62161 = 0xF2D1
