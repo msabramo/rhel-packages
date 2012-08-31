@@ -306,7 +306,9 @@ Patch200: python-2.6.4-expat-version.patch
 
 # Patch assert(_Py_HashSecret_Initialized) to only be used when Py_DEBUG is set
 # (in case of building with C asserts enabled without Py_DEBUG):
-Patch201: python-2.6.8-wrap-_Py_HashSecret_Initialized-with-if-Py_DEBUG.patch
+# 2012-08-31 msabramo: Commenting out Python-2.6.5-ioctl_test.patch
+# because it seems to have been fixed upstream
+# Patch201: python-2.6.8-wrap-_Py_HashSecret_Initialized-with-if-Py_DEBUG.patch
 
 # This is the generated patch to "configure"; see the description of
 #   %{regenerate_autotooling_patch}
@@ -527,7 +529,7 @@ rm -r Modules/zlib || exit 1
 %patch200 -p1 -b .expat-version
 %endif
 
-%patch201 -p1
+# %patch201 -p1
 
 # This shouldn't be necesarry, but is right now (2.2a3)
 find -name "*~" |xargs rm -f
