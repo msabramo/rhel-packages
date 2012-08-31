@@ -275,11 +275,15 @@ Patch102: python-2.7.3-lib64.patch
 #
 # This appears to be the same as that patch, but without the rebasing of libffi
 # (since we use the system copy of libffi):
-Patch110: python-2.6.8-ctypes-noexecmem.patch
+# 2012-08-31 msabramo: Commenting out python-2.6.8-ctypes-noexecmem.patch
+# because it seems to have been fixed upstream.
+# Patch110: python-2.6.8-ctypes-noexecmem.patch
 
 # Patch the Makefile.pre.in so that the generated Makefile doesn't try to build
 # a libpythonMAJOR.MINOR.a (bug 550692):
-Patch111: python-2.6.4-no-static-lib.patch
+# 2012-08-31 msabramo: Commenting out python-2.6.4-no-static-lib.patch
+# because it's not clear whether it's still needed or not?
+# Patch111: python-2.6.4-no-static-lib.patch
 
 # Resolves http://bugs.python.org/issue10013
 # Title: fix `./libpython2.6.so: undefined reference to `_PyParser_Grammar` in 
@@ -507,9 +511,9 @@ rm -r Modules/zlib || exit 1
 %patch55 -p1 -b .systemtap
 %endif
 
-%patch110 -p1 -b .selinux
+# %patch110 -p1 -b .selinux
 
-%patch111 -p1 -b .no-static-lib
+# %patch111 -p1 -b .no-static-lib
 
 %patch119 -p1 -b .parallel_build
 %patch120 -p1 -b .ioctl_test
