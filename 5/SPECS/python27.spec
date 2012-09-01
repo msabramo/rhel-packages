@@ -661,15 +661,6 @@ rm %{buildroot}%{_bindir}/python-config
 
 mkdir -p ${RPM_BUILD_ROOT}%{site_packages}
 
-#modulator
-cat > ${RPM_BUILD_ROOT}%{_bindir}/modulator << EOF
-#!/bin/bash
-exec %{site_packages}/modulator/modulator.py
-EOF
-chmod 755 ${RPM_BUILD_ROOT}%{_bindir}/modulator
-cp -r Tools/modulator \
-  ${RPM_BUILD_ROOT}%{site_packages}/
-
 #pynche
 cat > ${RPM_BUILD_ROOT}%{_bindir}/pynche << EOF
 #!/bin/bash
@@ -680,7 +671,6 @@ rm -f Tools/pynche/*.pyw
 cp -r Tools/pynche \
   ${RPM_BUILD_ROOT}%{site_packages}/
 
-mv Tools/modulator/README Tools/modulator/README.modulator
 mv Tools/pynche/README Tools/pynche/README.pynche
 
 #gettext
@@ -706,8 +696,6 @@ find %{buildroot}/ -name ".cvsignore"|xargs rm -f
 find %{buildroot}/ -name "*.bat"|xargs rm -f
 find . -name "*~"|xargs rm -f
 find . -name ".cvsignore"|xargs rm -f
-#zero length
-rm -f %{buildroot}%{site_packages}/modulator/Templates/copyright
 
 rm -f %{buildroot}%{pylibdir}/LICENSE.txt
 
@@ -716,7 +704,6 @@ rm -f %{buildroot}%{pylibdir}/LICENSE.txt
 %if !%{main_python}
 pushd %{buildroot}%{_bindir}
 mv idle idle%{__python_ver}
-mv modulator modulator%{__python_ver}
 mv pynche pynche%{__python_ver}
 mv pygettext.py pygettext%{__python_ver}.py
 mv msgfmt.py msgfmt%{__python_ver}.py
@@ -1087,14 +1074,11 @@ rm -fr %{buildroot}
 
 %files tools
 %defattr(-,root,root,755)
-%doc Tools/modulator/README.modulator
 %doc Tools/pynche/README.pynche
-%{site_packages}/modulator
 %{site_packages}/pynche
 %{_bindir}/smtpd*.py*
 %{_bindir}/2to3*
 %{_bindir}/idle*
-%{_bindir}/modulator*
 %{_bindir}/pynche*
 %{_bindir}/pygettext*.py*
 %{_bindir}/msgfmt*.py*
