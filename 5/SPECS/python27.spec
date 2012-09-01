@@ -481,9 +481,10 @@ rm -r Modules/expat || exit 1
 %endif
 
 #   Remove embedded copy of libffi:
-for SUBDIR in darwin libffi libffi_arm_wince libffi_msvc libffi_osx ; do
-  rm -r Modules/_ctypes/$SUBDIR || exit 1 ;
-done
+# 2012-08-31 msabramo: Commenting out -- this seems to fail.
+# for SUBDIR in darwin libffi libffi_arm_wince libffi_msvc libffi_osx ; do
+#   rm -r Modules/_ctypes/$SUBDIR || exit 1 ;
+# done
 
 #   Remove embedded copy of zlib:
 rm -r Modules/zlib || exit 1
