@@ -323,6 +323,11 @@ Patch200: python-2.6.4-expat-version.patch
 # above:
 Patch300: python-2.6.4-autotool-intermediates.patch
 
+# Patch test_getsitepackages in Lib/test/test_site.py to be aware of additional
+# lib64/python2.7/site-packages directory returned by site.getsitepackages()
+# 2012-08-31 msabramo
+Patch301: python-2.7.3-test-site.patch
+
 %if %{main_python}
 Obsoletes: python2 < 2.6.5
 Provides: python2 = %{version}
@@ -553,6 +558,8 @@ find -name "*~" |xargs rm -f
 # We don't apply the patch if we're working towards regenerating it
 # %patch300 -p0 -b .autotool-intermediates
 %endif
+
+%patch301 -p0 -b .test_site
 
 %build
 topdir=$(pwd)

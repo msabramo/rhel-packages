@@ -1,0 +1,10 @@
+--- Lib/test/test_site.py.2012-08-31-180636	2012-08-31 18:06:27.000000000 -0700
++++ Lib/test/test_site.py	2012-08-31 18:06:43.000000000 -0700
+@@ -241,6 +241,7 @@
+             self.assertEqual(dirs[2], wanted)
+         elif os.sep == '/':
+             # OS X non-framwework builds, Linux, FreeBSD, etc
++            dirs = [d for d in dirs if 'lib64' not in d]
+             self.assertEqual(len(dirs), 2)
+             wanted = os.path.join('xoxo', 'lib', 'python' + sys.version[:3],
+                                   'site-packages')
