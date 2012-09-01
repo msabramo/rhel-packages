@@ -652,7 +652,8 @@ fi
 ln -s python %{buildroot}%{_bindir}/python2
 %else
 mv %{buildroot}%{_bindir}/python %{buildroot}%{_bindir}/%{python}
-mv %{buildroot}/%{_mandir}/man1/python.1 %{buildroot}/%{_mandir}/man1/python%{pybasever}.1
+# 2012-08-31 msabramo: Commenting out; fails and possibly not necessary anymore?
+# mv %{buildroot}/%{_mandir}/man1/python.1 %{buildroot}/%{_mandir}/man1/python%{pybasever}.1
 rm %{buildroot}%{_bindir}/python-config
 %endif
 
